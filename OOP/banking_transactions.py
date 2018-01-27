@@ -1,5 +1,5 @@
 import datetime
-import pytz  # this is used to store date/time in utc format
+import pytz  # using this module to store data in local time
 
 class Account(object):
     """ Simple Account class with balance"""  # good practice to include a docstring at start of class
