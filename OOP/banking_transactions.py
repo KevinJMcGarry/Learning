@@ -12,7 +12,9 @@ class Account(object):
     def __init__(self, name, balance):  # init method initializes the class with attributes
         self.name = name  # all methods take self as their first parameter
         self.balance = balance
-        self.transaction_list = []  # initializing an empty list to store transactions info for deposits and withdrawals
+        self.transaction_list = [((Account._current_time(), balance))]
+        # list of tuples to store transactions info for deposits and withdrawals
+        # adding initial account setup balance to transaction list as a deposit
         print("account created for {}".format(self.name))
 
     def deposit(self, amount):
