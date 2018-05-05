@@ -9,14 +9,20 @@ parser.add_argument('--version', '-v', action='version', version='%(prog)s 1.0')
 
 args = parser.parse_args()
 
-with open(args.filename_read, 'r') as inputfile:
-    with open(args.filename_write, 'w') as outputfile:
-        lines_list = inputfile.readlines()
-        lines_list_reversed = lines_list[::-1]
+# good discussion on why it is best to put the entire with open inside try block
+# https://stackoverflow.com/questions/5627425/what-is-a-good-way-to-handle-exceptions-when-trying-to-read-a-file-in-python
 
-        # conditional for if the limit argument is not null
-        if args.limit:
-            lines_list_reversed = lines_list_reversed[:args.limit]
+try:
+    with open(args.filename_read, 'r') as inputfile:
+        with open(args.filename_write, 'w') as outputfile:
+            lines_list = inputfile.readlines()
+            lines_list_reversed = lines_list[::-1]
 
-        for line in lines_list_reversed:
-            outputfile.write(line)
+            # conditional for if the limit argument is not null
+            if args.limit:
+                lines_list_reversed = lines_list_reversed[:args.limit]
+
+            for line in lines_list_reversed:
+                outputfile.write(line)
+except FileNotFoundError as err:
+    print(f"Error: {err}")
