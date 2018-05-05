@@ -1,4 +1,11 @@
 #!/usr/bin/env python3.6
+
+# Script that allows a user to specify a 1) file name to read 2) the number of lines to read out of the file
+# and 3) the name of a file to write the lines to
+# the script then reverses the order of those lines and writes them to new file name
+
+# this script is an exercise in use a more robust CLI argument parsing environment
+
 import argparse
 
 parser = argparse.ArgumentParser(description='Read a file in reverse')
@@ -9,7 +16,7 @@ parser.add_argument('--version', '-v', action='version', version='%(prog)s 1.0')
 
 args = parser.parse_args()
 
-# good discussion on why it is best to put the entire with open inside try block
+# good discussion on why it is best to put the entire 'with open' block inside of the try block
 # https://stackoverflow.com/questions/5627425/what-is-a-good-way-to-handle-exceptions-when-trying-to-read-a-file-in-python
 
 try:
