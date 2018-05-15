@@ -7,6 +7,7 @@
 # this script is an exercise in use a more robust CLI argument parsing environment
 
 import argparse
+import sys
 
 parser = argparse.ArgumentParser(description='Read a file in reverse')
 parser.add_argument('filename_read', help='the file to read')
@@ -33,3 +34,4 @@ try:
                 outputfile.write(line)
 except FileNotFoundError as err:
     print(f"Error: {err}")
+    sys.exit(1)
