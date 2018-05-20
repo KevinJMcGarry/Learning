@@ -2,7 +2,7 @@
 # the above path is used so that the venv doesn't have to be activated for the script to work
 
 # Pre-requisites
-# need an api key from openweathermap.org and store in env variable called OWM_API_KEY
+# get an api key from openweathermap.org and store it in env variable called OWM_API_KEY
 # pip install requests module within the openweather venv
 
 
