@@ -1,4 +1,4 @@
-#!/Users/kevinmcgarry/venvs/openweather/bin/python
+#!//usr/bin/env python3
 # the above path is used so that the venv doesn't have to be activated for the script to work
 
 # Pre-requisites
