@@ -6,7 +6,7 @@
 # pip install requests module within the openweather venv
 
 
-# Usage: weather.py zip_code --country country_code
+# Usage: python3 openweathermap.py zip_code --country country_code
 
 
 import os
